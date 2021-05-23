@@ -16,7 +16,7 @@
         console.log('clickedElement:', clickedElement);
         //console.log('clickedElement (with plus): ' + clickedElement);
         clickedElement.classList.add('active');
-      
+
         /* [DONE] remove class 'active' from all articles */
         const activeArticles = document.querySelectorAll('.posts article.active');
         for (let activeArticle of activeArticles){
@@ -33,7 +33,7 @@
         /* [DONE] add class 'active' to the correct article */
         correctArticle.classList.add('active');
     }
-    
+
     const optArticleSelector = '.post',
         optTitleSelector = '.post-title',
         optTitleListSelector = '.titles';
@@ -64,10 +64,4 @@
     }
 
     generateTitleLinks();
-
-
-
 }
-
-
-
