@@ -25,10 +25,9 @@
             activeArticle.classList.remove('active');
         }
         /* [DONE] get 'href' attribute from the clicked link */
-        const hrefAttribute = clickedElement.getAttribute('href').substr(1);
+        const hrefAttribute = clickedElement.getAttribute('href');
         /* [DONE] find the correct article using the selector (value of 'href' attribute) */
-       // const correctArticle = document.querySelector('.posts article[id=hrefAttribute]');
-        const correctArticle = document.getElementById(hrefAttribute);
+        const correctArticle = document.querySelector(hrefAttribute);
         /* [DONE] add class 'active' to the correct article */
         correctArticle.classList.add('active');
     }
