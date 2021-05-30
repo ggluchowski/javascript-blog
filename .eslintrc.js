@@ -15,5 +15,8 @@ module.exports = {
         "vue"
     ],
     "rules": {
+    },
+    "globals": {
+      "Handlebars": false
     }
 };
