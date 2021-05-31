@@ -222,13 +222,13 @@
 
       <script id="template-tagCloud-link" type="text/x-handlebars-template">
         {{#each tags}}
-        <li><a href="#" class="{{ className }}">{{ tag }}</a></li>
+        <li><a href="#tag-{{ tag }}" class="{{ className }}">{{ tag }}</a></li>
         {{/each}}
       </script>
 
       <script id="template-author-right-bar-link" type="text/x-handlebars-template">
         {{#each authors}}
-        <li><a href="#"><span class="author-name">{{ author }} ({{ count }})</span></a></li>
+        <li><a href="#{{ author }}" class="post-author"><span class="author-name">{{ author }} ({{ count }})</span></a></li>
         {{/each}}
       </script>
 

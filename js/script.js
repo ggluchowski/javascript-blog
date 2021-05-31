@@ -22,8 +22,11 @@
         linksTo:{
           tagsActive: 'a.active[href^="#tag-"]',
           tags: '.post-tags a',
+          tagsRightBar: '.sidebar .tags a',
           authors: '.post a',
+          authorsRight: '.sidebar .authors a',
           authorsActive: '.post .post-author a.active',
+          authorsActiveRight: '.sidebar .authors a.active',
           titles: '.titles a',
         },
       },
@@ -197,10 +200,16 @@
     const addClickListenersToTags = function (){
       /* [DONE] find all links to tags */
       const tagLinks = document.querySelectorAll(select.all.linksTo.tags);
+      const tagLinksRight = document.querySelectorAll(select.all.linksTo.tagsRightBar);
       /* [DONE] START LOOP: for each link */
       for (let tagLink of tagLinks){
         /* [DONE] add tagClickHandler as event listener for that link */
         tagLink.addEventListener('click',tagClickHandler);
+      /* [DONE] END LOOP: for each link */
+      }
+      for (let tagLinkRight of tagLinksRight){
+        /* [DONE] add tagClickHandler as event listener for that link */
+        tagLinkRight.addEventListener('click',tagClickHandler);
       /* [DONE] END LOOP: for each link */
       }
     }
@@ -261,8 +270,14 @@
       const author = href.substr(1);
       /* [DONE] find all author links with class active */
       const authorLinks = document.querySelectorAll(select.all.linksTo.authorsActive);
+      const authorLinksRight = document.querySelectorAll(select.all.linksTo.authorsActiveRight);
       /* [DONE] START LOOP: for each active author link */
       for (let authorLink of authorLinks){
+        /* [DONE] remove class active */
+        authorLink.classList.remove('active');
+      /* [DONE] END LOOP: for each active author link */
+      }
+      for (let authorLink of authorLinksRight){
         /* [DONE] remove class active */
         authorLink.classList.remove('active');
       /* [DONE] END LOOP: for each active author link */
@@ -282,8 +297,14 @@
     const addClickListenersToAuthors = function (){
       /* [DONE] find all links to authors */
       const authorLinks = document.querySelectorAll(select.all.linksTo.authors);
+      const authorLinksRight = document.querySelectorAll(select.all.linksTo.authorsRight);
       /* [DONE] START LOOP: for each link */
       for (let authorLink of authorLinks){
+        /* [DONE] add tagClickHandler as event listener for that link */
+        authorLink.addEventListener('click', authorClickHandler);
+      /* [DONE] END LOOP: for each link */
+      }
+      for (let authorLink of authorLinksRight){
         /* [DONE] add tagClickHandler as event listener for that link */
         authorLink.addEventListener('click', authorClickHandler);
       /* [DONE] END LOOP: for each link */
